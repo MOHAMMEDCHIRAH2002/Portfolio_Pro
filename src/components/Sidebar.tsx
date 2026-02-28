@@ -37,7 +37,7 @@ export default function Sidebar() {
     const [imgError, setImgError] = useState(false);
 
     return (
-        <aside className="hidden lg:flex w-[var(--sidebar-width)] h-screen fixed left-0 top-0 z-40 p-3 pr-0">
+        <aside className="hidden lg:flex w-[var(--sidebar-width)] h-screen fixed left-0 top-0 z-40 p-3">
             {/*
              * Outer wrapper: flex-col, NO overflow (sidebar itself doesn't scroll).
              * Gap between cards: 12px.

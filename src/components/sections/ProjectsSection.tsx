@@ -27,20 +27,24 @@ export default function ProjectsSection() {
                         transition={{ duration: 0.4, delay: i * 0.1 }}
                     >
                         <Link href={`/projects/${project.slug}`}>
-                            <div className="group relative card-surface border border-[var(--border)] rounded-[var(--radius-lg)] shadow-[var(--shadow-soft)] overflow-hidden hover:border-[var(--border-accent)] hover:shadow-[var(--glow-accent)] transition-all duration-300 cursor-pointer hover:-translate-y-0.5">
+                            <div className="group relative card-surface-luxury border border-[var(--border)] rounded-[20px] shadow-[var(--shadow-card)] overflow-hidden transition-all duration-300 cursor-pointer hover:-translate-y-1 hover:border-[rgba(255,255,255,0.12)] hover:shadow-[0_8px_40px_rgba(0,0,0,0.5),0_0_20px_rgba(56,189,248,0.06)]">
+                                {/* Top edge highlight — glass */}
+                                <div className="absolute inset-x-0 top-0 h-px z-10 pointer-events-none bg-gradient-to-r from-transparent via-[rgba(255,255,255,0.08)] to-transparent" />
                                 {/* Project Image / Placeholder */}
                                 <div className="relative h-48 bg-[var(--surface-2)] overflow-hidden">
-                                    <div className="absolute inset-0 bg-gradient-to-br from-[var(--accent-2)] to-transparent" />
+                                    <div className="absolute inset-0 bg-gradient-to-br from-[var(--accent-3)] to-transparent" />
+                                    {/* Soft spotlight */}
+                                    <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_60%_at_50%_40%,rgba(255,255,255,0.03),transparent_70%)]" />
                                     <div className="absolute inset-0 flex items-center justify-center">
-                                        <span className="text-5xl font-bold text-[var(--text-faint)] opacity-20 select-none tracking-wider">
+                                        <span className="text-5xl font-bold text-[var(--text-faint)] opacity-15 select-none tracking-wider">
                                             {project.title.slice(0, 2).toUpperCase()}
                                         </span>
                                     </div>
                                     {/* Bottom gradient for readability */}
-                                    <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-[var(--surface-1)] to-transparent" />
+                                    <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-[var(--surface-1)] to-transparent" />
                                     {/* Hover overlay */}
-                                    <div className="absolute inset-0 bg-[var(--accent-3)] opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                                        <span className="px-4 py-2 bg-[var(--surface-1)]/90 backdrop-blur-sm rounded-[var(--radius-md)] text-sm font-medium text-[var(--accent-text)] border border-[var(--border-accent)] opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300 shadow-[var(--shadow-card)]">
+                                    <div className="absolute inset-0 bg-[rgba(56,189,248,0.04)] opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                        <span className="px-4 py-2 bg-[var(--surface-1)]/90 backdrop-blur-sm rounded-[var(--radius-md)] text-sm font-medium text-[var(--accent-text)] border border-[rgba(255,255,255,0.08)] opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300 shadow-[var(--shadow-card)]">
                                             View Case Study →
                                         </span>
                                     </div>

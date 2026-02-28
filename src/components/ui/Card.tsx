@@ -51,11 +51,13 @@ export default function Card({
         ${className}
       `}
         >
+            {/* Top edge highlight — glass simulation */}
+            <div className="absolute inset-x-0 top-0 h-px rounded-t-[var(--radius-lg)] pointer-events-none bg-gradient-to-r from-transparent via-[rgba(255,255,255,0.06)] to-transparent" />
             {/* Subtle inner gradient on hover */}
             <div
                 className={`absolute inset-0 rounded-[var(--radius-lg)] pointer-events-none transition-opacity duration-300 ${glow
                         ? "bg-gradient-to-br from-[rgba(56,189,248,0.04)] to-transparent opacity-0 group-hover:opacity-100"
-                        : "bg-gradient-to-br from-[rgba(148,163,184,0.02)] to-transparent opacity-0 group-hover:opacity-100"
+                        : "bg-gradient-to-br from-[rgba(255,255,255,0.015)] to-transparent opacity-0 group-hover:opacity-100"
                     }`}
             />
             <div className={`relative z-10 ${innerClassName}`}>{children}</div>

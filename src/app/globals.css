@@ -5,36 +5,36 @@
    ============================================ */
 
 :root {
-  /* Core palette — blue-tinted darks */
-  --bg: #06080d;
-  --surface-1: #0c1017;
-  --surface-2: #131820;
-  --surface-3: #1a2030;
-  --surface-hover: #1f2738;
+  /* Core palette — true black dark mode (neutral, minimal blue) */
+  --bg: #07090c;
+  --surface-1: #0c0e12;
+  --surface-2: #121417;
+  --surface-3: #1a1c20;
+  --surface-hover: #222428;
 
-  /* Borders */
-  --border: rgba(148, 163, 184, 0.08);
-  --border-strong: rgba(148, 163, 184, 0.14);
-  --border-accent: rgba(56, 189, 248, 0.2);
+  /* Borders — neutral, low opacity */
+  --border: rgba(255, 255, 255, 0.06);
+  --border-strong: rgba(255, 255, 255, 0.10);
+  --border-accent: rgba(56, 189, 248, 0.15);
 
-  /* Text */
-  --text: #e8ecf4;
-  --text-muted: #7a8ba5;
-  --text-faint: #4b5c72;
+  /* Text — high contrast soft white + neutral gray */
+  --text: #eaedf2;
+  --text-muted: #8a8f98;
+  --text-faint: #555962;
 
-  /* Accent — Cyan / Teal (single hue) */
+  /* Accent — Cyan / Teal (single hue, slightly muted) */
   --accent: #38bdf8;
-  --accent-2: rgba(56, 189, 248, 0.12);
-  --accent-3: rgba(56, 189, 248, 0.06);
+  --accent-2: rgba(56, 189, 248, 0.10);
+  --accent-3: rgba(56, 189, 248, 0.05);
   --accent-hover: #7dd3fc;
   --accent-text: #bae6fd;
 
-  /* Shadows & Glows */
-  --shadow-soft: 0 2px 8px rgba(0, 0, 0, 0.35), 0 1px 3px rgba(0, 0, 0, 0.2);
-  --shadow-card: 0 4px 16px rgba(0, 0, 0, 0.3), 0 1px 4px rgba(0, 0, 0, 0.15);
-  --shadow-elevated: 0 8px 32px rgba(0, 0, 0, 0.4), 0 2px 8px rgba(0, 0, 0, 0.2);
-  --glow-accent: 0 0 20px rgba(56, 189, 248, 0.08), 0 0 40px rgba(56, 189, 248, 0.04);
-  --glow-accent-strong: 0 0 24px rgba(56, 189, 248, 0.12), 0 0 48px rgba(56, 189, 248, 0.06);
+  /* Shadows & Glows — deeper for true black */
+  --shadow-soft: 0 2px 8px rgba(0, 0, 0, 0.5), 0 1px 3px rgba(0, 0, 0, 0.3);
+  --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.45), 0 1px 6px rgba(0, 0, 0, 0.25);
+  --shadow-elevated: 0 8px 40px rgba(0, 0, 0, 0.55), 0 2px 10px rgba(0, 0, 0, 0.3);
+  --glow-accent: 0 0 20px rgba(56, 189, 248, 0.06), 0 0 40px rgba(56, 189, 248, 0.03);
+  --glow-accent-strong: 0 0 24px rgba(56, 189, 248, 0.10), 0 0 48px rgba(56, 189, 248, 0.05);
 
   /* Radius scale */
   --radius-sm: 14px;
@@ -53,7 +53,7 @@
   --space-4xl: 96px;
 
   /* Layout */
-  --sidebar-width: 300px;
+  --sidebar-width: 400px;
   --mininav-width: 72px;
 
   /* Transitions */
@@ -71,7 +71,7 @@
   --accent-light: var(--accent-text);
   --accent-dark: #0ea5e9;
   --accent-glow: var(--accent-2);
-  --accent-glow-strong: rgba(56, 189, 248, 0.2);
+  --accent-glow-strong: rgba(56, 189, 248, 0.15);
   --surface-hover-legacy: var(--surface-hover);
   --shadow-sm: var(--shadow-soft);
   --shadow-md: var(--shadow-card);
@@ -136,7 +136,7 @@ body::before {
   background-repeat: repeat;
 }
 
-/* Background: very subtle radial glow */
+/* Background: subtle ambient glow — premium depth */
 body::after {
   content: "";
   position: fixed;
@@ -144,8 +144,9 @@ body::after {
   z-index: 0;
   pointer-events: none;
   background:
-    radial-gradient(ellipse 80% 60% at 50% 0%, rgba(56, 189, 248, 0.03) 0%, transparent 60%),
-    radial-gradient(ellipse 50% 40% at 80% 100%, rgba(56, 189, 248, 0.02) 0%, transparent 50%);
+    radial-gradient(ellipse 70% 50% at 20% 0%, rgba(56, 189, 248, 0.025) 0%, transparent 50%),
+    radial-gradient(ellipse 50% 40% at 85% 100%, rgba(56, 189, 248, 0.015) 0%, transparent 45%),
+    radial-gradient(ellipse 40% 35% at 70% 10%, rgba(255, 255, 255, 0.008) 0%, transparent 50%);
 }
 
 #__next,
@@ -210,9 +211,9 @@ main {
    Utility classes
    ============================================ */
 .glass {
-  background: rgba(12, 16, 23, 0.75);
-  backdrop-filter: blur(16px) saturate(1.2);
-  -webkit-backdrop-filter: blur(16px) saturate(1.2);
+  background: rgba(12, 14, 18, 0.8);
+  backdrop-filter: blur(16px) saturate(1.1);
+  -webkit-backdrop-filter: blur(16px) saturate(1.1);
 }
 
 .gradient-text {
@@ -241,16 +242,27 @@ main {
 }
 
 /* ============================================
-   Premium card surfaces
+   Premium card surfaces — luxury dark
    ============================================ */
 .card-surface {
   background:
-    linear-gradient(160deg, rgba(148, 163, 184, 0.03) 0%, transparent 50%),
+    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(255, 255, 255, 0.03) 0%, transparent 70%),
+    linear-gradient(160deg, rgba(255, 255, 255, 0.02) 0%, transparent 40%),
     var(--surface-1);
 }
 
 .card-surface-elevated {
   background:
-    linear-gradient(160deg, rgba(148, 163, 184, 0.04) 0%, transparent 50%),
+    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(255, 255, 255, 0.04) 0%, transparent 70%),
+    linear-gradient(160deg, rgba(255, 255, 255, 0.025) 0%, transparent 40%),
     var(--surface-2);
+}
+
+/* Luxury project card surface — spotlight + depth */
+.card-surface-luxury {
+  background:
+    radial-gradient(ellipse 100% 60% at 50% -30%, rgba(255, 255, 255, 0.045) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 50% at 20% 10%, rgba(255, 255, 255, 0.015) 0%, transparent 50%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.015) 0%, transparent 30%),
+    var(--surface-1);
 }
