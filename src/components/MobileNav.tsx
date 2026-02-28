@@ -15,6 +15,7 @@ import {
 
 export default function MobileNav() {
     const [isOpen, setIsOpen] = useState(false);
+    const [imgError, setImgError] = useState(false);
 
     const handleNavClick = (id: string) => {
         setIsOpen(false);
@@ -30,23 +31,22 @@ export default function MobileNav() {
                 <div className="flex items-center justify-between px-4 py-3">
                     <div className="flex items-center gap-3">
                         <div className="relative w-10 h-10 rounded-full overflow-hidden ring-1 ring-[var(--border-accent)]">
-                            <Image
-                                src={profile.photoUrl}
-                                alt={profile.name}
-                                fill
-                                className="object-cover"
-                                sizes="40px"
-                                onError={(e) => {
-                                    const target = e.target as HTMLImageElement;
-                                    target.style.display = "none";
-                                }}
-                            />
                             <div className="absolute inset-0 flex items-center justify-center bg-[var(--surface-2)] text-[var(--accent)] text-sm font-bold">
                                 {profile.name
                                     .split(" ")
                                     .map((n) => n[0])
                                     .join("")}
                             </div>
+                            {!imgError && (
+                                <Image
+                                    src={profile.photoUrl}
+                                    alt={profile.name}
+                                    fill
+                                    className="object-cover relative z-10"
+                                    sizes="40px"
+                                    onError={() => setImgError(true)}
+                                />
+                            )}
                         </div>
                         <div>
                             <p className="text-sm font-semibold text-[var(--text)]">

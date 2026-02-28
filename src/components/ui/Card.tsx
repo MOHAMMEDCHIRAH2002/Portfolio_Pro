@@ -6,20 +6,24 @@ import { ReactNode } from "react";
 interface CardProps {
     children: ReactNode;
     className?: string;
+    /** Extra classes applied to the inner content wrapper (z-10 div) */
+    innerClassName?: string;
     hover?: boolean;
     glow?: boolean;
-    padding?: "sm" | "md" | "lg";
+    padding?: "sm" | "md" | "lg" | "none";
 }
 
 const paddingClasses = {
     sm: "p-4",
     md: "p-6",
     lg: "p-8",
+    none: "",
 };
 
 export default function Card({
     children,
     className = "",
+    innerClassName = "",
     hover = true,
     glow = false,
     padding = "md",
@@ -54,7 +58,7 @@ export default function Card({
                         : "bg-gradient-to-br from-[rgba(148,163,184,0.02)] to-transparent opacity-0 group-hover:opacity-100"
                     }`}
             />
-            <div className="relative z-10">{children}</div>
+            <div className={`relative z-10 ${innerClassName}`}>{children}</div>
         </motion.div>
     );
 }

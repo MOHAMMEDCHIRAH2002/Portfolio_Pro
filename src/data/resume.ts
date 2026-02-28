@@ -96,7 +96,7 @@ export const profile: Profile = {
   location: "Casablanca, Morocco",
   summary:
     "Passionate full-stack developer with a strong interest in new technologies and their impact on businesses. Motivated to contribute to the digital transformation of organizations while continuously developing technical and professional expertise through real-world projects and innovative solutions.",
-  photoUrl: "/profile.jpg",
+  photoUrl: "/profile.png",
   resumeUrl: "/resume.pdf",
 };
 
