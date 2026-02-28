@@ -159,7 +159,7 @@ export default function Sidebar() {
                     flex-1 + min-h-0 + overflow-hidden layout.
                 ════════════════════════════════════════════════════════════ */}
                 <div
-                    className="relative group shrink-0
+                    className="relative group flex-1 min-h-0 flex flex-col
                                card-surface border border-[var(--border)] rounded-[var(--radius-lg)]
                                shadow-[var(--shadow-soft)] hover:border-[var(--border-strong)]
                                hover:shadow-[var(--shadow-card)] transition-all duration-300
@@ -171,12 +171,13 @@ export default function Sidebar() {
                                     opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
                     {/* Header */}
-                    <div className="relative z-10 mb-3">
+                    <div className="relative z-10 shrink-0 mb-3">
                         <Label>Skills</Label>
                     </div>
 
-                    {/* All skills — no scroll */}
-                    <div className="relative z-10 space-y-3">
+                    {/* Chip area — scrolls only when content overflows */}
+                    <div className="relative z-10 flex-1 min-h-0 overflow-y-auto space-y-3
+                                    [scrollbar-width:thin] [scrollbar-color:var(--border-strong)_transparent]">
                         {skillGroups.map((group) => (
                             <div key={group.category}>
                                 <p className="text-[9px] font-bold text-[var(--text-faint)]

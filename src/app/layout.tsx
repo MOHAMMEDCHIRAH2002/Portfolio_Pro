@@ -60,7 +60,7 @@ export default function RootLayout({
           <Sidebar />
 
           {/* Main Content */}
-          <main className="flex-1 lg:ml-[var(--sidebar-width)] lg:mr-[var(--mininav-width)] min-h-screen">
+          <main className="flex-1 lg:ml-[var(--sidebar-width)] lg:mr-[var(--mininav-width)] min-h-screen lg:border-l border-[var(--border-strong)]">
             <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-24 lg:pb-8">
               {children}
             </div>
