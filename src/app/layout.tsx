@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Montserrat } from "next/font/google";
+import { Geist_Mono, Montserrat, Poppins } from "next/font/google";
 import "./globals.css";
 import Sidebar from "@/components/Sidebar";
 import MiniNav from "@/components/MiniNav";
@@ -10,9 +10,10 @@ import {
   generateWebSiteJsonLd,
 } from "@/lib/seo";
 
-const geistSans = Geist({
+const poppins = Poppins({
   subsets: ["latin"],
-  variable: "--font-geist-sans",
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-poppins",
   display: "swap",
 });
 
@@ -43,7 +44,7 @@ export default function RootLayout({
   const webSiteJsonLd = generateWebSiteJsonLd();
 
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable} ${montserrat.variable}`}>
+    <html lang="en" className={`${poppins.variable} ${geistMono.variable} ${montserrat.variable}`}>
       <head>
         <script
           type="application/ld+json"
