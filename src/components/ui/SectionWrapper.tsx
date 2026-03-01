@@ -34,7 +34,7 @@ export default function SectionWrapper({
             >
                 {title && (
                     <div className="mb-[var(--space-xl)]">
-                        <h2 className="text-2xl font-semibold text-[var(--text-primary)] mb-2">
+                        <h2 className="mono-title text-2xl font-semibold text-[var(--text-primary)] mb-2">
                             {title}
                         </h2>
                         {subtitle && (

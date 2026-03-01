@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, JetBrains_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Montserrat } from "next/font/google";
 import "./globals.css";
 import Sidebar from "@/components/Sidebar";
 import MiniNav from "@/components/MiniNav";
@@ -10,15 +10,22 @@ import {
   generateWebSiteJsonLd,
 } from "@/lib/seo";
 
-const inter = Inter({
+const geistSans = Geist({
   subsets: ["latin"],
-  variable: "--font-inter",
+  variable: "--font-geist-sans",
   display: "swap",
 });
 
-const jetbrainsMono = JetBrains_Mono({
+const geistMono = Geist_Mono({
   subsets: ["latin"],
-  variable: "--font-jetbrains-mono",
+  variable: "--font-geist-mono",
+  display: "swap",
+});
+
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  weight: ["700", "800", "900"],
+  variable: "--font-montserrat",
   display: "swap",
 });
 
@@ -36,7 +43,7 @@ export default function RootLayout({
   const webSiteJsonLd = generateWebSiteJsonLd();
 
   return (
-    <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable}`}>
+    <html lang="en" className={`${geistSans.variable} ${geistMono.variable} ${montserrat.variable}`}>
       <head>
         <script
           type="application/ld+json"
