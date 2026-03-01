@@ -7,7 +7,7 @@ import { ArrowRightIcon, SparklesIcon } from "@/components/Icons";
 
 export default function HeroSection() {
     return (
-        <section id="hero" className="relative pt-12 lg:pt-24 pb-16 scroll-mt-8 ">
+        <section id="hero" className="mt-24 ">
             {/* ── Hero background lighting ── */}
             <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
                 {/* Top-left spotlight */}
